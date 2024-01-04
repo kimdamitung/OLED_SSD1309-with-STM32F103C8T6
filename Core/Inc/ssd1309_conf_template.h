@@ -7,6 +7,7 @@
 
 #ifndef INC_SSD1309_CONF_TEMPLATE_H_
 #define INC_SSD1309_CONF_TEMPLATE_H_
+#include "main.h"
 
 // Choose a microcontroller family
 //#define STM32F0
@@ -21,12 +22,12 @@
 //#define STM32G0
 
 // Choose a bus
-#define SSD1309_USE_I2C
+//#define SSD1309_USE_I2C
 #define SSD1309_USE_SPI
 
 // I2C Configuration
-#define SSD1309_I2C_PORT        hi2c1
-#define SSD1309_I2C_ADDR        (0x3C << 1)
+//#define SSD1309_I2C_PORT        hi2c1
+//#define SSD1309_I2C_ADDR        (0x3C << 1)
 
 // SPI Configuration
 #define SSD1309_SPI_PORT        hspi1
