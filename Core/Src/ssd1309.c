@@ -303,7 +303,6 @@ void ssd1309_Line(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD1309_COLOR 
             y1 += signY;
         }
     }
-    return;
 }
 
 /* Draw polyline */
@@ -316,8 +315,6 @@ void ssd1309_Polyline(const SSD1309_VERTEX *par_vertex, uint16_t par_size, SSD13
     for(i = 1; i < par_size; i++) {
         ssd1309_Line(par_vertex[i - 1].x, par_vertex[i - 1].y, par_vertex[i].x, par_vertex[i].y, color);
     }
-
-    return;
 }
 
 /* Convert Degrees to Radians */
@@ -331,7 +328,7 @@ static uint16_t ssd1309_NormalizeTo0_360(uint16_t par_deg) {
     if(par_deg <= 360) {
         loc_angle = par_deg;
     } else {
-        loc_angle = par_deg % 360;
+//        loc_angle = par_deg % 360;
         loc_angle = ((par_deg != 0)?par_deg:360);
     }
     return loc_angle;
@@ -372,8 +369,6 @@ void ssd1309_DrawArc(uint8_t x, uint8_t y, uint8_t radius, uint16_t start_angle,
         yp2 = y + (int8_t)(cos(rad)*radius);
         ssd1309_Line(xp1,yp1,xp2,yp2,color);
     }
-
-    return;
 }
 
 /*
@@ -421,7 +416,6 @@ void ssd1309_DrawArcWithRadiusLine(uint8_t x, uint8_t y, uint8_t radius, uint16_
     // Radius line
     ssd1309_Line(x,y,first_point_x,first_point_y,color);
     ssd1309_Line(x,y,xp2,yp2,color);
-    return;
 }
 
 /* Draw circle by Bresenhem's algorithm */
@@ -455,8 +449,6 @@ void ssd1309_DrawCircle(uint8_t par_x,uint8_t par_y,uint8_t par_r,SSD1309_COLOR 
             err = err + (x * 2 + 1);
         }
     } while (x <= 0);
-
-    return;
 }
 
 /* Draw filled circle. Pixel positions calculated using Bresenham's algorithm */
@@ -491,8 +483,6 @@ void ssd1309_FillCircle(uint8_t par_x,uint8_t par_y,uint8_t par_r,SSD1309_COLOR 
             err = err + (x * 2 + 1);
         }
     } while (x <= 0);
-
-    return;
 }
 
 /* Draw a rectangle */
@@ -501,8 +491,6 @@ void ssd1309_DrawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD13
     ssd1309_Line(x2,y1,x2,y2,color);
     ssd1309_Line(x2,y2,x1,y2,color);
     ssd1309_Line(x1,y2,x1,y1,color);
-
-    return;
 }
 
 /* Draw a filled rectangle */
@@ -517,7 +505,6 @@ void ssd1309_FillRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD13
             ssd1309_DrawPixel(x, y, color);
         }
     }
-    return;
 }
 
 /* Draw a bitmap */
@@ -542,7 +529,6 @@ void ssd1309_DrawBitmap(uint8_t x, uint8_t y, const unsigned char* bitmap, uint8
             }
         }
     }
-    return;
 }
 
 void ssd1309_SetContrast(const uint8_t value) {

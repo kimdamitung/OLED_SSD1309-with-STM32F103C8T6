@@ -173,7 +173,7 @@ void ssd1309_TestFonts1() {
 }
 
 /*
- * This test shows how an 128x64 px OLED can replace a 0802 LCD.
+ * This test shows how a 128x64 px OLED can replace a 0802 LCD.
  */
 void ssd1309_TestFonts2() {
 #ifdef SSD1309_INCLUDE_FONT_16x24
@@ -240,7 +240,6 @@ void ssd1309_TestLine() {
   ssd1309_Line(1,1,SSD1309_WIDTH - 1,SSD1309_HEIGHT - 1,White);
   ssd1309_Line(SSD1309_WIDTH - 1,1,1,SSD1309_HEIGHT - 1,White);
   ssd1309_UpdateScreen();
-  return;
 }
 
 void ssd1309_TestRectangle() {
@@ -250,7 +249,6 @@ void ssd1309_TestRectangle() {
     ssd1309_DrawRectangle(1 + (5*delta),1 + (5*delta) ,SSD1309_WIDTH-1 - (5*delta),SSD1309_HEIGHT-1 - (5*delta),White);
   }
   ssd1309_UpdateScreen();
-  return;
 }
 
 void ssd1309_TestRectangleFill() {
@@ -273,14 +271,12 @@ void ssd1309_TestCircle() {
   }
 
   ssd1309_UpdateScreen();
-  return;
 }
 
 void ssd1309_TestArc() {
   ssd1309_DrawArc(30, 30, 30, 20, 270, White);
   ssd1309_DrawArcWithRadiusLine(80, 55, 10, 30, 270, White);
   ssd1309_UpdateScreen();
-  return;
 }
 
 void ssd1309_TestPolyline() {
@@ -297,7 +293,6 @@ void ssd1309_TestPolyline() {
 
   ssd1309_Polyline(loc_vertex,sizeof(loc_vertex)/sizeof(loc_vertex[0]),White);
   ssd1309_UpdateScreen();
-  return;
 }
 
 void ssd1309_TestDrawBitmap()
