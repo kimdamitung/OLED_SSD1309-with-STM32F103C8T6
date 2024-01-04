@@ -1,4 +1,5 @@
 "./Core/Src/fonts.o"
+"./Core/Src/logo_art.o"
 "./Core/Src/main.o"
 "./Core/Src/ssd1309.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
